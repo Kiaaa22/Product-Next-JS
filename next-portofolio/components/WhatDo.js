@@ -1,17 +1,15 @@
 import React from 'react'
-import Heading from '../components/Heading'
+import Heading from './Heading'
 
 import {GoPencil} from 'react-icons/go'
 import {IoMdMicrophone} from 'react-icons/io'
 import {RiLightbulbFlashFill} from 'react-icons/ri'
 import Navbar from '@/components/Navbar'
-import Skills from '@/components/Skills'
 
 const WhatDo = () => {
     return (
     <>
     <Navbar />
-    <Skills />
     <section className='container mx-auto py-10 px-4' id="portofolio" >
         <div className='pl-8'>
         <Heading title="What I Do" />

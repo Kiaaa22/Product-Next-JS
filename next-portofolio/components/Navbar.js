@@ -1,7 +1,6 @@
 import Link from "next/link"
 import React, { useState } from "react"
 
-import {HiOutlineDownload} from 'react-icons/hi'
 import {FaBars, FaTimes} from 'react-icons/fa'
 
 const Navbar = () => {
@@ -12,20 +11,15 @@ const [nav, setNav] = useState(false)
             name:'home',
             link: '/'
         },
-        {
-            id: 2,
-            name: 'about',
-            link: 'About'
-        },
+        // {
+        //     id: 2,
+        //     name: 'about',
+        //     link: 'About'
+        // },
         {
             id: 3,
-            name: 'skills',
-            link: 'WhatDo'
-        },
-        {
-            id: 4,
-            name: "creation",
-            link: 'Creation'
+            name: 'products',
+            link: 'Products'
         },
         {
             id: 5,
@@ -37,7 +31,7 @@ const [nav, setNav] = useState(false)
     <>
         <div className='bg-pink-200 fixed top-0 w-[100%] z-10'>
             <div className='container w-full mx-auto flex justify-between items-center py-4'>
-                <div className=' text-[24px] text-pink-400 px-14 font-semibold'>Kia</div>
+                <div className=' text-[24px] text-pink-400 px-14 font-semibold'>KiCos</div>
 
                 <ul className="hidden md:flex gap-4 justify-between items-center px-14">
                     <li>
@@ -45,19 +39,14 @@ const [nav, setNav] = useState(false)
                             Home  
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link href={"About"} className="text-pink-400">
-                            About Me
+                            Portofolio
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
-                        <Link href={"WhatDo"} className="text-pink-400">
-                            Skills
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={"Creation"} className="text-pink-400">
-                            Creation
+                        <Link href={"products"} className="text-pink-400">
+                            Product
                         </Link>
                     </li>
                     <li>

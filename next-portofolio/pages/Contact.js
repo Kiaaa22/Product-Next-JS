@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import React from 'react'
+import Footer from '@/components/Footer'
 import Button from '../components/Button'
 import Heading from '../components/Heading'
 import Link from 'next/link'
@@ -66,6 +67,7 @@ const Contact = () => {
             </div>
         </form>
     </section>
+    <Footer />
     </>
     )
 }

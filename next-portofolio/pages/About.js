@@ -9,7 +9,10 @@ import { ImLocation2 } from 'react-icons/im'
 import { BsFillPersonFill } from 'react-icons/bs'
 import { RiWhatsappFill, RiInstagramFill } from 'react-icons/ri'
 import { MdHeight } from 'react-icons/md'
-import Link from 'next/link'
+import Footer from '../components/Footer'
+import Skills from '../components/Skills'
+import Creation from '../components/Creation'
+import WhatDo from '../components/WhatDo'
 
 const About = () => {
   return (
@@ -17,7 +20,7 @@ const About = () => {
     <Navbar />
     <div className="container mx-auto py-10 px-4" id='about'>
       <div className='pl-8'>
-      <Heading title="About Me" />
+      <Heading title="About Kia" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[60px]">
@@ -106,6 +109,10 @@ const About = () => {
         </p>
       </div>
     </div>
+    <Skills />
+    <WhatDo />
+    <Creation />
+    <Footer />
     </>
   )
 }
