@@ -37,17 +37,16 @@ const ProdukJual = () => {
         <div className="container mx-auto py-4 md:py-10 px-4" id="produkjual">
         <div className="pl-8 flex flex-col md:flex-row md:justify-between">
             <Heading title="Product" />
-        <form onSubmit={handleSearch} className="md:mt-20 md:ml-96 w-5/12 lg:w-72 flex justify-center mb-8">
+        <form onSubmit={handleSearch} className="py-2.5 md:mt-20 md:ml-96 w-5/12 lg:w-72 flex justify-center mb-8">
                 <input
                 type="text"
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
                 placeholder="Search product"
-                className=" form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700  bg-clip-padding border border-solid border-pink-300 rounded transition ease-in-out m-0 focus:text-gray-600 focus:bg-white focus:border-pink-300 focus:outline-none"
-                />
+                className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700  bg-clip-padding border border-solid border-pink-300 rounded transition ease-in-out m-0 focus:text-gray-600 focus:bg-white focus:border-pink-300 focus:outline-none"/>
             </form>
         </div>
-        <div className="pl-8 flex gap-8 flex-wrap justify-center	">
+        <div className="pl-8 flex gap-8 flex-wrap justify-center">
             {filteredData.map((item, index) => {
             return (
                 <div class="max-w-xs rounded-md shadow-md dark:bg-pink-300 dark:text-pink-500">
