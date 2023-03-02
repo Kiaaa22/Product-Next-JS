@@ -34,10 +34,10 @@ const ProdukJual = () => {
     return (
     <>
         <Navbar />
-        <div className="container mx-auto py-10 px-4" id="produkjual">
-        <div className="pl-8 flex justify-between">
+        <div className="container mx-auto py-4 md:py-10 px-4" id="produkjual">
+        <div className="pl-8 flex flex-col md:flex-row md:justify-between">
             <Heading title="Product" />
-        <form onSubmit={handleSearch} className="mt-20 ml-96 w-5/12 lg:w-72">
+        <form onSubmit={handleSearch} className="md:mt-20 md:ml-96 w-5/12 lg:w-72 flex justify-center mb-8">
                 <input
                 type="text"
                 value={keyword}
