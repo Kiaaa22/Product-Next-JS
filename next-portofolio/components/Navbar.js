@@ -45,12 +45,12 @@ const [nav, setNav] = useState(false)
                         </Link>
                     </li> */}
                     <li>
-                        <Link href={"products"} className="text-pink-400">
+                        <Link href={"/products"} className="text-pink-400">
                             Product
                         </Link>
                     </li>
                     <li>
-                        <Link href={"Contact"} className="text-pink-400">
+                        <Link href={"/Contact"} className="text-pink-400">
                             Contact
                         </Link>
                     </li>

@@ -1,57 +1,84 @@
 import data from '@/data/data'
-import React from 'react'
+import React,{useState} from 'react'
 import { useRouter } from 'next/router'
 import Navbar from '@/components/Navbar'
 import Heading from '@/components/Heading'
+import { IoCartOutline } from 'react-icons/io5'
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai'
 
 function getCostum(id) {
-  const item = data.find((e) => e.id === Number(id))
-  if (typeof item === 'object') {
+    const item = data.find((e) => e.id === Number(id))
+    if (typeof item === 'object') {
     return item
-  }
-  return {}
+    }
+    return {}
 }
 
 function Detail() {
-  const router = useRouter()
-  const { slug } = router.query
-  console.log(data)
+    const router = useRouter()
+    const { slug } = router.query
+    console.log(data)
 
-  const costum = getCostum(slug)
-  console.log(costum)
+    const costum = getCostum(slug)
+    console.log(costum)
 
-  if (Object.keys(costum).length === 0) {
+    if (Object.keys(costum).length === 0) {
     return <div>Item not found</div>
-  }
+    }
 
-  return (
+    const [count, setCount] = useState(1)
+
+const minCount = ()=>{
+    if(count === 1){
+        setCount(1)
+    }else{
+        setCount(count-1)
+    }
+}
+    return (
     <>
-      <Navbar />
-      <div class="container mx-auto py-10 px-4">
+        <Navbar />
+        <div class="container mx-auto py-10 px-4">
         <div class="pl-8">
-          <Heading title="Product Detail" />
+            <Heading title="Product Detail" />
         </div>
         <div className="pl-8 flex gap-x-20">
-          <img
+            <img
             src={costum.image}
-            className="h-96 w-full md:h-auto md:w-80 rounded"
+            className="w-full md:h-auto md:w-96 rounded"
             alt=""
-          />
-          <div className="">
-            <h5 className="mb-2 text-2xl font-medium text-pink-500">
-              {costum.name}
+            />
+            <div>
+            <h5 className="mb-2 text-4xl font-medium text-pink-500">
+                {costum.name}
             </h5>
-            <p class="text-base text-pink-400">{costum.price}</p>
-            <p class="text-base text-pink-400">Terjual : {costum.terjual}</p>
-            <p class="text-base text-pink-400">Stok : {costum.stok}</p>
-            <p class="mt-5 text-base text-pink-400">{costum.desk}</p>
-            <p class="text-base text-pink-400">Brand : {costum.merk}</p>
-            <p class="text-base text-pink-400">Ukuran : {costum.ukuran}</p>
-          </div>
+            <p class="text-2xl text-pink-400">Rp {costum.price}</p>
+            <p class="text-lg text-pink-400">{costum.terjual} Terjual | Sisa {costum.stok}</p>
+            <p class="mt-5 text-lg text-pink-400">{costum.desk}</p>
+            <p class="text-lg text-pink-400">Brand : {costum.merk}</p>
+            <p class="text-lg text-pink-400">Ukuran : {costum.ukuran}</p>
+
+            <div className='mt-20'>
+            <div className='flex gap-4'>
+                <button className='text-pink-600 text-xl' onClick={minCount}><AiOutlineMinusCircle /></button>
+                <p>{count}</p>
+                <button className='text-pink-600 text-xl' onClick={(()=>setCount(count+1))}><AiOutlinePlusCircle /></button>
+            </div>
+
+            <div className='flex mt-4 gap-3'>
+                <button 
+                class="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md outline outline-pink-600 outline-2 dark:text-pink-600"
+                cursorshover="true"><IoCartOutline className='text-xl'/>Add to cart</button>
+                <button 
+                class="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-pink-400 dark:text-pink-700"
+                cursorshover="true">Checkout</button>
+            </div>
+            </div>
+            </div>
         </div>
-      </div>
+        </div>
     </>
-  )
+    )
 }
 
 export default Detail

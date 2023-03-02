@@ -40,7 +40,7 @@ const data = [
   },
   {
     id: 4,
-    name: 'Violet Evergarden Costume',
+    name: 'Violet Costume',
     price: 1550000,
     image: '/images/kostum violet.jpeg',
     rate: 4.6,
