@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-    <div className='bg-gray-200 bg-cover bg-center h-[100px] text-black grid place-items-center'>
+    <div className='grid bg-gray-200 bg-cover bg-center h-[100px] text-black place-items-center'>
         <div className='text-center'>
             <p>With much ❤️</p>
             <p>&copy; 2023 Kia</p>
