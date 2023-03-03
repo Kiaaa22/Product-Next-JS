@@ -10,7 +10,6 @@ import Footer from '@/components/Footer'
 const ProdukJual = () => {
     const [keyword, setKeyword] = useState("");
     const [filteredData, setFiltered] = useState([]);
-    
     useEffect(() => {
         filterData();
         }, [data, keyword]);
@@ -31,6 +30,7 @@ const ProdukJual = () => {
             };
     const router = useRouter()
     const dataCustom = data
+    
     return (
     <>
         <Navbar />
