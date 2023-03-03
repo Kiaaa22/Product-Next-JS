@@ -1,4 +1,4 @@
-#KiCos
+# KiCos
 
 ## Getting Started
 Welcome to KiCos!
