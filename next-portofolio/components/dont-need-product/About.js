@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 
-import Heading from '../components/Heading'
+import Heading from '../Heading'
 import Navbar from '@/components/Navbar'
 
 import { FaBirthdayCake, FaSchool } from 'react-icons/fa'
@@ -9,10 +9,10 @@ import { ImLocation2 } from 'react-icons/im'
 import { BsFillPersonFill } from 'react-icons/bs'
 import { RiWhatsappFill, RiInstagramFill } from 'react-icons/ri'
 import { MdHeight } from 'react-icons/md'
-import Footer from '../components/Footer'
-import Skills from '../components/Skills'
-import Creation from '../components/Creation'
-import WhatDo from '../components/WhatDo'
+import Footer from '../Footer'
+import Skills from './Skills'
+import Creation from './Creation'
+import WhatDo from './WhatDo'
 
 const About = () => {
   return (

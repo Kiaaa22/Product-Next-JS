@@ -3,8 +3,9 @@ import React from 'react'
 import Footer from '@/components/Footer'
 import Button from '../components/Button'
 import Heading from '../components/Heading'
-import Link from 'next/link'
 import { useState} from 'react'
+import { MdLocationOn, MdEmail } from 'react-icons/md'
+import { BsFillTelephoneFill } from 'react-icons/bs'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -48,9 +49,25 @@ const Contact = () => {
     <Navbar />
     <section className='container mx-auto py-10 px-4' id="contact">
     <ToastContainer position="top-center" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="dark" />
-        <div className='pl-8'>
+        <div class="pt-36 grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
+		<div class="py-6 md:py-0 md:px-6">
         <Heading title="Contact Us" />
-        </div>
+			<p class="pt-2 pb-4">Fill in the form to start a conversation</p>
+			<div class="space-y-4">
+				<p class="flex items-center">
+					<MdLocationOn className="text-pink-400 text-[24px]"/>
+					<span className='pl-3'>Sawojajar, Malang</span>
+				</p>
+				<p class="flex items-center">
+					<BsFillTelephoneFill className="text-pink-400 text-[20px]"/>
+					<span className='pl-3'>+62 812-3336-4789</span>
+				</p>
+				<p class="flex items-center">
+					<MdEmail className="text-pink-400 text-[24px]"/>
+					<span className='pl-3'>zaskiakiaa@gmail.com</span>
+				</p>
+			</div>
+		</div>
 
         <form onSubmit={handleSubmit} className='flex flex-col gap-8 pl-8 pr-8'>
             <div className='text-sm grid grid-cols-1 md:grid-cols-2 gap-8 '>
@@ -66,8 +83,8 @@ const Contact = () => {
                 <button type='submit' className='btn bg-pink-400 px-8 py-3 rounded-lg'>Kirim Pesan</button>
             </div>
         </form>
+        </div>
     </section>
-    <Footer />
     </>
     )
 }

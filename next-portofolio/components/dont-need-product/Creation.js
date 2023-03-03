@@ -1,5 +1,5 @@
 import React from 'react'
-import Heading from './Heading'
+import Heading from '../Heading'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 
