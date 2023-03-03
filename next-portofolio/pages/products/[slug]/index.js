@@ -42,7 +42,7 @@ const minCount = ()=>{
         <div class="pl-8">
             <Heading title="Product Detail" />
         </div>
-        <div className="pl-8 flex gap-x-20">
+        <div className="pl-8 flex flex-col gap-x-20">
             <img
             src={costum.image}
             className="w-full md:h-auto md:w-96 rounded"
