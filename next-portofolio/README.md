@@ -18,4 +18,5 @@ enjoy our products as much as we enjoy making them available to you.
 
 ## Deploy on Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For more Details
+[Next.js deployment documentation](https://product-next-js.vercel.app/)
