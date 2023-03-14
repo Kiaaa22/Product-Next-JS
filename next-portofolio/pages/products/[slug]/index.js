@@ -1,5 +1,5 @@
-import data from '@/data/data'
-import React,{useState} from 'react'
+
+import React,{useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
 import Navbar from '@/components/Navbar'
 import Heading from '@/components/Heading'
@@ -7,6 +7,19 @@ import { IoCartOutline } from 'react-icons/io5'
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai'
 
 function getCostum(id) {
+    const [data, setData] = useState([]) 
+    useEffect(() => {
+        try{
+          const fetchData = async () => {
+            const response = await fetch("https://api.jsonbin.io/v3/b/640fbd57ebd26539d08e2ec7");
+            const result = await response.json();
+            setData(result.record);
+          };
+          fetchData();
+        } catch (err){
+        console.log(err);
+      }
+      }, []);
     const item = data.find((e) => e.id === Number(id))
     if (typeof item === 'object') {
     return item
@@ -15,18 +28,19 @@ function getCostum(id) {
 }
 
 function Detail() {
+    const [count, setCount] = useState(1)
     const router = useRouter()
     const { slug } = router.query
-    console.log(data)
+    
+
 
     const costum = getCostum(slug)
     console.log(costum)
 
     if (Object.keys(costum).length === 0) {
-    return <div>Item not found</div>
+    return <div>Loading....</div>
     }
 
-    const [count, setCount] = useState(1)
 
 const minCount = ()=>{
     if(count === 1){

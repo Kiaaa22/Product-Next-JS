@@ -1,19 +1,19 @@
-import React,{useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Heading from '@/components/Heading'
 import { useRouter } from 'next/navigation'
-import data from '@/data/data.js'
 import Footer from '@/components/Footer'
 
 
 const ProdukJual = () => {
+    const [data, setData] = useState([])
     const [keyword, setKeyword] = useState("");
     const [filteredData, setFiltered] = useState([]);
     useEffect(() => {
         filterData();
         }, [data, keyword]);
-    
+            
         const handleSearch = (e) => {
             e.preventDefault();
             const filteredData = data.filter((e) => {
@@ -30,7 +30,19 @@ const ProdukJual = () => {
             };
     const router = useRouter()
     const dataCustom = data
-    
+
+    useEffect(() => {
+        try{
+          const fetchData = async () => {
+            const response = await fetch("https://api.jsonbin.io/v3/b/640fbd57ebd26539d08e2ec7");
+            const result = await response.json();
+            setData(result.record);
+          };
+          fetchData();
+        } catch (err){
+        console.log(err);
+      }
+      }, []);
     return (
     <>
         <Navbar />
